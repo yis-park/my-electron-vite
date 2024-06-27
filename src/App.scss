@@ -1,7 +1,7 @@
-@charset "UTF-8";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   box-sizing: border-box;
   font-family: "SUIT-Medium";
@@ -11,13 +11,11 @@ body {
   padding: 0;
   margin: 0;
 }
-
 main {
   padding-top: 80px;
   width: 75%;
   float: left;
 }
-
 div h5 {
   margin-bottom: 3px;
   color: rgb(107, 107, 107);
@@ -29,16 +27,22 @@ a {
 }
 
 /* header */
-header .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
-  color: #fff;
+header {
+  // header 네비게이션 버튼
+  .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    color: #fff;
+  }
 }
-
 @tailwind base;
+
 /* Write your own custom base styles here */
+
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */
+
 /* Write you own custom component styles here */
+
 .ease-in-animation {
   @apply transition duration-500 ease-in-out;
 }
@@ -46,13 +50,16 @@ header .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
+
 /* Your own custom utilities */
+
 @media (min-width: 1024px) {
   .btn-menu {
     display: none;
     position: relative;
   }
 }
+
 .loginForm {
   width: 600px;
   height: auto;
@@ -109,6 +116,7 @@ h1#login_title {
 }
 
 /* register */
+
 form {
   width: 600px;
   height: auto;
@@ -151,7 +159,7 @@ form {
 }
 
 /* 이메일 직접입력 */
-input[name=register_email_write] {
+input[name="register_email_write"] {
   width: 50%;
   height: 30px;
   border: 1px solid rgb(163, 156, 231);
@@ -226,7 +234,6 @@ select {
   padding: 0 10px;
   margin-bottom: 10px;
 }
-
 .profileForm {
   width: 600px;
   padding-bottom: 40px;
@@ -234,6 +241,7 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   border: 5px solid rgb(163, 156, 231);
   border-radius: 20px;
 }
@@ -262,7 +270,6 @@ select {
   height: 40rem;
   padding: 0 10px;
 }
-
 .upload table,
 th,
 td {
@@ -271,10 +278,10 @@ td {
   padding: 5px;
 }
 
+// sidebar
 .block {
   display: block;
 }
-
 .hidden {
   display: hidden;
 }

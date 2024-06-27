@@ -1,8 +1,25 @@
 import { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import { DashboardLayout } from "../components/Layout";
+import { Responsive, WidthProvider } from "react-grid-layout";
 
-function Dashboard() {
+const ResponsiveGridLayout = WidthProvider(Responsive);
+function DashboardGrid() {
+  const LAYOUTS = {
+    lg: [
+      { i: "a", x: 0, y: 0, w: 4, h: 2, minW: 1, maxW: 4, minH: 2, maxH: 4 },
+      { i: "b", x: 0, y: 2, w: 4, h: 2, minW: 1, maxW: 4, minH: 2, maxH: 4 },
+      { i: "c", x: 0, y: 2, w: 2, h: 2, minW: 1, maxW: 4, minH: 2, maxH: 4 },
+      { i: "d", x: 2, y: 2, w: 2, h: 2, minW: 1, maxW: 4, minH: 2, maxH: 4 },
+    ],
+    md: [
+      { i: "a", x: 0, y: 0, w: 2, h: 2, minW: 1, maxW: 2, minH: 2, maxH: 3 },
+      { i: "b", x: 0, y: 2, w: 1, h: 2, minW: 1, maxW: 2, minH: 2, maxH: 3 },
+      { i: "c", x: 0, y: 2, w: 2, h: 2, minW: 1, maxW: 2, minH: 2, maxH: 3 },
+      { i: "d", x: 0, y: 4, w: 2, h: 2, minW: 1, maxW: 2, minH: 2, maxH: 3 },
+    ],
+  };
+
   // 차트 DOM 요소를 참조하기 위해 useRef를 사용합니다.
 
   const graphicRef = useRef(null);
@@ -238,27 +255,52 @@ function Dashboard() {
     };
 
     soundChart.setOption(soundOption);
+
+    const handleResize = () => {
+      myChart.resize();
+      pieChart.resize();
+      soundChart.resize();
+      graphicChart.resize();
+    };
+    window.addEventListener("resize", handleResize);
     // 컴포넌트가 언마운트될 때 차트를 정리합니다.
     return () => {
+      window.removeEventListener("resize", handleResize);
       myChart.dispose();
       pieChart.dispose();
       soundChart.dispose();
+      graphicChart.dispose();
     };
   }, []);
 
   return (
     <DashboardLayout>
-      <main className="dashboard" >
-        {/* chartRef를 div 요소에 할당합니다. */}
-        <div ref={graphicRef} style={{ width: "100%", height: "500px" }}></div>
-        <div ref={chartRef} style={{ width: "100%", height: "500px" }}></div>
-        <div style={{ display: "flex" }}>
-          <div ref={pieChartRef} style={{ width: "100%", height: "500px" }} />
-          <div ref={soundChartRef} style={{ width: "100%", height: "500px" }} />
-        </div>
+      <main className="dashboard">
+        <ResponsiveGridLayout
+          className="layout"
+          layouts={LAYOUTS}
+          breakpoints={{ lg: 1200, xs: 480, xxs: 0 }}
+          cols={{ lg: 4, md: 2, sm: 6, xs: 4, xxs: 2 }}
+        >
+          <div key="a" style={{ width: "100%", height: "100%" }}>
+            <div ref={graphicRef} style={{ width: "100%", height: "100%" }} />
+          </div>
+          <div key="b" style={{ width: "100%", height: "100%" }}>
+            <div ref={chartRef} style={{ width: "100%", height: "100%" }} />
+          </div>
+          <div key="c" style={{ width: "100%", height: "100%" }}>
+            <div ref={pieChartRef} style={{ width: "100%", height: "100%" }} />
+          </div>
+          <div key="d" style={{ width: "100%", height: "100%" }}>
+            <div
+              ref={soundChartRef}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+        </ResponsiveGridLayout>
       </main>
     </DashboardLayout>
   );
 }
 
-export default Dashboard;
+export default DashboardGrid;
