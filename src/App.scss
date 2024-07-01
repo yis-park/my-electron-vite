@@ -33,13 +33,7 @@ header {
     color: #fff;
   }
 }
-@tailwind base;
 
-/* Write your own custom base styles here */
-
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
 
 /* Write you own custom component styles here */
 
@@ -47,9 +41,6 @@ header {
   @apply transition duration-500 ease-in-out;
 }
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
 
 /* Your own custom utilities */
 
