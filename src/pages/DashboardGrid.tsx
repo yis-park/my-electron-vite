@@ -282,16 +282,16 @@ function DashboardGrid() {
           breakpoints={{ lg: 1200, xs: 480, xxs: 0 }}
           cols={{ lg: 4, md: 2, sm: 6, xs: 4, xxs: 2 }}
         >
-          <div key="a" style={{ width: "100%", height: "100%" }}>
+          <div key="a">
             <div ref={graphicRef} style={{ width: "100%", height: "100%" }} />
           </div>
-          <div key="b" style={{ width: "100%", height: "100%" }}>
+          <div key="b">
             <div ref={chartRef} style={{ width: "100%", height: "100%" }} />
           </div>
-          <div key="c" style={{ width: "100%", height: "100%" }}>
+          <div key="c">
             <div ref={pieChartRef} style={{ width: "100%", height: "100%" }} />
           </div>
-          <div key="d" style={{ width: "100%", height: "100%" }}>
+          <div key="d">
             <div
               ref={soundChartRef}
               style={{ width: "100%", height: "100%" }}

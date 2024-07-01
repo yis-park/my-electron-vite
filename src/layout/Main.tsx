@@ -80,7 +80,7 @@ function Main() {
             게시글 올리기 <DrawRoundedIcon />
           </Button>
         </div>
-        <Card sx={{ maxWidth: 350, margin: "60px auto" }}>
+        <Card sx={{ maxWidth: 400, margin: "60px auto" }}>
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -160,7 +160,7 @@ function Main() {
             </CardContent>
           </Collapse>
         </Card>
-        <Card sx={{ maxWidth: 350, margin: "0 auto 20px" }}>
+        <Card sx={{ maxWidth: 400, margin: "0 auto 20px" }}>
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

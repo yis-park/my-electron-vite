@@ -14,8 +14,6 @@ body {
 
 main {
   padding-top: 80px;
-  width: 75%;
-  float: left;
 }
 
 div h5 {
@@ -28,24 +26,41 @@ a {
   color: inherit;
 }
 
+h1 {
+  font-size: 2em !important; /* 기본값: 32px */
+  font-weight: bold !important; /* 기본값: bold */
+}
+
+h2 {
+  font-size: 1.5em !important; /* 기본값: 24px */
+  font-weight: bold !important; /* 기본값: bold */
+}
+
+h3 {
+  font-size: 1.17em !important; /* 기본값: 18.72px */
+  font-weight: bold !important; /* 기본값: bold */
+}
+
+h4 {
+  font-size: 1em !important; /* 기본값: 16px */
+  font-weight: bold !important; /* 기본값: bold */
+}
+
+h5 {
+  font-size: 0.83em !important; /* 기본값: 13.28px */
+  font-weight: bold !important; /* 기본값: bold */
+}
+
 /* header */
 header .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
   color: #fff;
 }
 
-@tailwind base;
-/* Write your own custom base styles here */
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
 /* Write you own custom component styles here */
 .ease-in-animation {
   @apply transition duration-500 ease-in-out;
 }
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
 /* Your own custom utilities */
 @media (min-width: 1024px) {
   .btn-menu {

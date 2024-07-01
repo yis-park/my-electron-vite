@@ -7,8 +7,8 @@ interface BodyWrapperProps {
 
 const BodyWrapper: React.FC<BodyWrapperProps> = ({ children }) => {
   return (
-    <div className="relative min-h-screen">
-      <div className="w-full min-h-screen">{children}</div>
+    <div className="relative ">
+      <div className="w-full ">{children}</div>
     </div>
   );
 };

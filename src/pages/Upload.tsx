@@ -33,7 +33,7 @@ function Upload() {
     <DashboardLayout>
       <main>
         <div className="upload">
-          <h1>게시글 올리기</h1>
+          <h1 >게시글 올리기</h1>
           <table>
             <tbody>
               <tr>

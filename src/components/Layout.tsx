@@ -13,9 +13,9 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 }) => {
   return (
     <BodyWrapper>
-      <div className="flex h-screen bg-gray-200">
+      <div className="flex h bg-gray-200">
         <Sidebar />
-        <div className="flex flex-col flex-1 overflow-hidden">
+        <div className="flex flex-col flex-1 overflow-scroll">
           <div className="content">
             <section className="sm:flex-row flex flex-col flex-1">
               <div
